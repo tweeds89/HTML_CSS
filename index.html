@@ -2,38 +2,65 @@
 <html lang="pl">
     <head>
         <meta charset="UTF-8">
-        <title>Home</title>
+        <title>About</title>
         <link rel="stylesheet" type="text/css" href="style/style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>       
+        <script>
+            $(document).ready(function(){
+                $('#about').on('click', function(e){
+                   e.preventDefault();
+                     $('#main').load("about.html");                      
+                });
+                
+                $('#contact').on('click', function(e){
+                    e.preventDefault();                
+                       $('#main').load("contact.html");
+                });               
+            });
+        </script>
     </head>   
     <body>
         <div class="container">
-            <header id="header">
-                <img src="images/image-header.jpg" alt="image-header">
-            </header>
+            <header id="header"></header>          
             <nav id="menu">
                 <a href="index.html">Strona główna</a>
-                <a href="about.html">O mnie</a>
-                <a href="contact.html">Kontakt</a>
+                <a href="about.html" id="about">O mnie</button>
+                <a href="contact.html" id="contact">Kontakt</a>
             </nav>
-            <div id="sidebar">
-                <h3>Linki</h3>
-            </div>
+            <div id="image">
+                <img src="images/reverse.jpg" class="image"/>
+            <div id="sidebar">                
+                <p>               
+                   <a href= "http://github.com/tweeds89"><img src="images/git.png" class="git"/></a>
+                </p>
+                <p>
+                   <a href= "http://linkedin.com/in/pawel-palinski/"><img src="images/linkedin.png" class="linkedin"/></a>   
+                </p>
+            </div>       
             <div id="main">
+              <p>
+                <h1>Witaj na mojej stronie</h1>
+              </p>
+              <p class="article">
+                  <b> Mam na imię Paweł i znajdziesz tutaj kilka informacji o mnie<br>
+                      i o technologiach, które do tej pory poznałem.</b>
+              </p>         
+            </div>       
+            <div class="technologies">
+                <h2>Poznane technologie</h2>
                 <p>
-                Lorem ipsum dolor sit amet, pericula signiferumque cu nec, 
-                tale soluta nam ad. Purto officiis qui ei, et malis theophrastus nec, 
-                mel tale oblique consulatu eu. No his ipsum efficiantur, te has vidisse 
-                sententiae. Et odio vulputate ius, cu iudico delicata usu, audire 
-                habemus voluptaria eu vim. Pro idque adolescens te. Ex summo consulatu his.
-                </p>
-                <p>
-                Lorem ipsum dolor sit amet, pericula signiferumque cu nec, 
-                tale soluta nam ad. Purto officiis qui ei, et malis theophrastus nec, 
-                mel tale oblique consulatu eu. No his ipsum efficiantur, te has vidisse 
-                sententiae. Et odio vulputate ius, cu iudico delicata usu, audire 
-                habemus voluptaria eu vim. Pro idque adolescens te. Ex summo consulatu his.
-                </p>
-            </div>           
+                 <img src="images/php.png" class="php"/>  
+                 <img src="images/sql.png" class="sql"/> 
+                 <img src="images/jquery.png" class="jquery"/> 
+                 <img src="images/ajax.png" class="ajax"/> 
+                 <img src="images/html.png" class="html"/> 
+                 <img src="images/css.png" class="css"/> 
+                </p>               
+            </div>
+            <footer>
+                <span>&copy;Paweł Paliński</span>
+            </footer>
+            </div>   
         </div>
     </body>
 </html>

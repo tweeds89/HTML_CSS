@@ -1,0 +1,138 @@
+.container{
+  margin: 0 auto;
+  width: 70%;
+  box-shadow: 0px 9px 13px 5px;
+}
+
+#header{
+  background: rgba(154, 154, 154, 0.12);
+  height: 90px;
+}
+
+#menu{
+  text-align: right;
+  padding: 5px 0 5px 0; 
+  background: #8b88bb;
+}
+
+#menu a{
+  margin-right: 20px;
+  text-decoration: none;
+  font-size: 14px;
+  font-family: Arial Narrow;
+  color: black;
+}
+
+#menu a:hover{
+  color: #615d5d;
+}
+
+#sidebar{
+  padding-top: 30px;
+  width: 13%;
+  padding-right: 10px;;
+  position: absolute;
+}
+
+#main{ 
+  float:right;
+  width:80%;
+  height: 498px;
+  position: relative;
+  color: #a9a8a8;
+}
+ 
+
+#main h1, #sidebar{
+  text-align: center; 
+}
+
+#main .article{
+  font-size:18px;
+  width: 100%;
+  padding-top: 100px;
+  text-align: left;
+}
+
+.image{
+  position: absolute; 
+  width: 69%;
+}
+
+#sidebar .git{
+  width: 80px;
+}
+
+#sidebar .linkedin{
+  width: 60px;
+}
+
+.technologies{
+  clear:both;
+  margin: 0 auto;
+  text-align: center;
+  opacity: 0.7;
+  background: rgb(203, 218, 225);
+  padding-bottom: 2px;
+}
+
+.technologies .php, .jquery{
+  width: 150px;
+}
+
+.technologies .sql{
+  width: 120px;
+  padding-right: 30px;
+}
+
+.technologies .ajax{
+  width: 150px;
+  padding-left: 20px;
+}
+
+.technologies .html, .css{
+  width: 100px;
+}
+
+.technologies h2{
+  background: #c1c1c1;
+}
+
+footer{  
+  background: #a29f9f;
+  font-family: "Lucida Sans Unicode";
+  color: #444444;
+  font-size: 13px;
+  text-align: right;
+  padding: 8px 10px 8px 0px;
+ 
+}
+
+
+/***********************About**********************/
+
+.about img{
+  width: 170px;
+  padding: 10px 0 10px 0;
+  float: left;
+  opacity: 0.7;
+}
+
+.about .info{
+  float:right;
+  padding: 10px 175px 0 0;
+  color: black;
+}
+
+.about .description{
+  clear:both;
+  color: black;
+}
+
+ul li{
+  list-style-type: none;
+  font-size: 18px;
+  line-height: 150%;
+}
+
+
