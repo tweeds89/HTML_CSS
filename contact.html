@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>About</title>
+        <link rel="stylesheet" type="text/css" href="style/style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script>           
+            $(document).ready(function(){            
+                $('#contact-form').on('submit', function(){
+                     var form_data = $(this).serialize();                                      
+                     $.ajax({
+                         url: "send.php",
+                         method: "POST",
+                         data: form_data,
+                         dataType: "html",
+                         success: function(data){
+                            $('#success').html(data);
+                            $('#contact-form')[0].reset();                           
+                         }
+                     });
+                      return false;
+                });
+            });           
+        </script>
+    </head>
+    <body>
+        <div id="contact">
+        <h2>Napisz do mnie</h2>
+        <form method="POST" id="contact-form" >
+            <p>
+               <label>E-mail:</label><br>
+               <input type="email" placeholder="Podaj swój email" name="email" required/>
+            </p>
+            <p>
+               <label>Temat:</label><br>
+               <input type="text" placeholder="Temat" name="subject" required/>
+            </p>
+            <p>
+                <textarea placeholder="Napisz wiadomość" name="message" cols="40" rows="10" class="message" required></textarea>
+            </p>
+            <p>
+                <input type="submit" name="submit" class="btn-submit" value="Wyślij"/>
+            </p>
+        </form>
+        </div>
+        <div id="success"></div>
+    </body>
+</html>
+
+
+

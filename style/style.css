@@ -135,4 +135,29 @@ ul li{
   line-height: 150%;
 }
 
+/******************************Contact*********************/
+
+#contact{
+  width: 337px;
+}
+
+#contact input{
+  width: 337px;
+  height: 20px;
+  border-radius: 5px;
+}
+
+#contact .message {
+  width: 337px;
+  border-radius: 5px;
+}
+
+#contact .btn-submit{
+  display: block;
+  height: 25px;
+  width: 70px;
+  margin: 0 auto;
+  border-radius: 5px;
+}
+
 
