@@ -7,12 +7,12 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>       
         <script>
             $(document).ready(function(){
-                $('#about').on('click', function(e){
+                $('.about').on('click', function(e){
                    e.preventDefault();
                      $('#main').load("about.html");                      
                 });
                 
-                $('#contact').on('click', function(e){
+                $('.contact').on('click', function(e){
                     e.preventDefault();                
                        $('#main').load("contact.html");
                 });               
@@ -22,10 +22,15 @@
     <body>
         <div class="container">
             <header id="header"></header>          
-            <nav id="menu">
-                <a href="index.html">Strona główna</a>
-                <a href="about.html" id="about">O mnie</button>
-                <a href="contact.html" id="contact">Kontakt</a>
+            <nav id="menu">            
+                <a href="index.html" class="home">Strona główna</a>
+                <div class="dropdown">
+                    <button class="dropbtn">Menu</button>
+                    <div class="dropdown-content">
+                        <a href="about.html" class="about">O mnie</a>
+                        <a href="contact.html" class="contact">Kontakt</a>                      
+                    </div>
+                </div>
             </nav>
             <div id="image">
                 <img src="images/reverse.jpg" class="image"/>
