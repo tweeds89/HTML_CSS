@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="pl">
     <head>
@@ -15,23 +16,62 @@
                 $('.contact').on('click', function(e){
                     e.preventDefault();                
                        $('#main').load("contact.html");
-                });               
+                });
+                
+                $('.loginForm').on('submit', function(e){
+                   e.preventDefault();      
+                    var form_data = $(this).serialize();
+                     $.ajax({
+                       url: "login.php",
+                       method: "POST",
+                       data: form_data,
+                       dataType: "html",
+                       success: function(data){
+                            $('.status').html(data); 
+                            if(data == "Jesteś zalogowany"){ 
+                                window.location = "index.php";
+                          }                         
+                       }                     
+                   });                     
+                });                                
             });
         </script>
     </head>   
     <body>
         <div class="container">
-            <header id="header"></header>          
-            <nav id="menu">            
-                <a href="index.html" class="home">Strona główna</a>
+            <header id="header"></header>
+            <nav id="menu">
+                <div class="login">                   
+                    <?php 
+                    if (isset($_SESSION['id'])){
+                       
+                        echo "<form action='logout.php' method='POST' >   
+                              <label>Jesteś zalogowany jako </label>". $_SESSION['username']."
+                              <button type='submit' name='submit'>Wyloguj</button>
+                              </form>";
+                            
+                    }else{
+                        
+                        echo "<form action='login.php' method='POST' class='loginForm'>
+                              <input type='text' name='username' placeholder='Nazwa użytkownika/E-mail'>
+                              <input type='password' name='password' placeholder='Hasło'>
+                              <button type='submit' name='submit' class='log-btn'>Zaloguj</button>
+                              </form>";                      
+                    }            
+                ?>
+                     
+                </div>
+                <span class="status"></span>
+                <a href="index.php" class="home">Strona główna</a>
                 <div class="dropdown">
                     <button class="dropbtn">Menu</button>
                     <div class="dropdown-content">
                         <a href="about.html" class="about">O mnie</a>
-                        <a href="contact.html" class="contact">Kontakt</a>                      
+                        <a href="contact.html" class="contact">Kontakt</a>   
                     </div>
                 </div>
             </nav>
+            
             <div id="image">
                 <img src="images/reverse.jpg" class="image"/>
             <div id="sidebar">                

@@ -9,6 +9,10 @@
   height: 90px;
 }
 
+.login, .status{   
+    float: left; 
+}
+
 /****Menu rozwijalne****/
 #menu{
   text-align: right;
