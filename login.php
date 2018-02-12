@@ -20,16 +20,12 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
         }else{
             
             while($row = mysqli_fetch_assoc($result)){
-                /*
+                
                 $hashedPasswordCheck = password_verify($password, $row['password']);
                 
                 if($hashedPasswordCheck == false){
                      echo "Nieprawidłowy login lub hasło!";
-                */
-    
-                if($password != $row['password']){
-                      echo "Nieprawidłowy login lub hasło!";
-                    
+                
                 }else{
                     $_SESSION['id'] = $row['id'];
                     $_SESSION['username'] = $row['username'];

@@ -9,11 +9,32 @@
   height: 90px;
 }
 
-.login, .status{   
-    float: left; 
+.login{
+  padding-left: 10px;
 }
 
-/****Menu rozwijalne****/
+.login, .status{   
+  float: left; 
+}
+
+.login button{
+  margin: 0 15px;
+  background: #8b88bb;
+  color: black;
+  border: none;
+  font-family: Arial Narrow;
+  cursor: pointer;
+}
+
+.login button:hover{
+  color: white;
+}
+
+.login input{
+  background: #c6c4de;
+  border-radius: 5px;
+}
+
 #menu{
   text-align: right;
   padding: 5px 50px 5px 0; 
@@ -31,6 +52,8 @@
 #menu a:hover{
   color: white;
 }
+
+/****Menu rozwijalne****/
 
 .dropbtn{
   background: #8b88bb;
@@ -50,7 +73,7 @@
   display: none;
   position: absolute;
   background: #8b88bb;
-  width: 70px;
+  width: 80px;
   z-index: 1;
 }
 
@@ -65,6 +88,10 @@
 
 .dropdown-content .about{
   padding: 10px 20px 5px 0;
+}
+
+.dropdown-content .signup{
+  padding: 10px 5px 5px 0;
 }
 
 .dropdown-content a:hover {
@@ -215,4 +242,23 @@ ul li{
   border-radius: 5px;
 }
 
+/*****************************Signup*************************/
+
+#signup{
+  width: 337px;
+}
+
+#signup input{
+  width: 337px;
+  height: 20px;
+  border-radius: 5px;
+}
+
+#signup button{
+  display: block;
+  height: 25px;
+  width: 100px;
+  margin: 0 auto;
+  border-radius: 5px;
+}
 

@@ -7,16 +7,16 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script>           
             $(document).ready(function(){            
-                $('#contact-form').on('submit', function(){
+                $('#signup-form').on('submit', function(){
                      var form_data = $(this).serialize();                                      
                      $.ajax({
-                         url: "send.php",
+                         url: "signup.php",
                          method: "POST",
                          data: form_data,
                          dataType: "html",
                          success: function(data){
                             $('.success').html(data);
-                            $('#contact-form')[0].reset();                           
+                            $('#signup-form')[0].reset();                           
                          }
                      });
                       return false;
@@ -25,22 +25,31 @@
         </script>
     </head>
     <body>
-        <div id="contact">
-        <h2>Napisz do mnie</h2>
-        <form method="POST" id="contact-form" >
+        <div id="signup">
+        <h2>Rejestracja</h2>
+        <form method="POST" id="signup-form" >
+            <p>
+               <label>Imię:</label><br>
+               <input type="text" placeholder="Podaj swoje imię" name="first_name" required/>
+            </p>
+            <p>
+               <label>Nazwisko:</label><br>
+               <input type="text" placeholder="Podaj swój nazwisko" name="last_name" required/>
+            </p>
             <p>
                <label>E-mail:</label><br>
                <input type="email" placeholder="Podaj swój email" name="email" required/>
             </p>
             <p>
-               <label>Temat:</label><br>
-               <input type="text" placeholder="Temat" name="subject" required/>
+               <label>Login:</label><br>
+               <input type="text" placeholder="Login" name="username" required/>
             </p>
             <p>
-                <textarea placeholder="Napisz wiadomość" name="message" cols="40" rows="10" class="message" required></textarea>
+               <label>Hasło:</label><br>
+               <input type="password" placeholder="Hasło" name="password" required/>
             </p>
             <p>
-                <input type="submit" name="submit" class="btn-submit" value="Wyślij"/>
+                <button type="submit" name="submit" class="btn-submit">Zajejestruj</button>
             </p>
         </form>
         </div>

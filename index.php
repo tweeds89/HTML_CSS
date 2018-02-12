@@ -18,6 +18,11 @@
                        $('#main').load("contact.html");
                 });
                 
+                $('.signup').on('click', function(e){
+                    e.preventDefault();                
+                       $('#main').load("signupForm.php");
+                });
+                
                 $('.loginForm').on('submit', function(e){
                    e.preventDefault();      
                     var form_data = $(this).serialize();
@@ -68,6 +73,7 @@
                     <div class="dropdown-content">
                         <a href="about.html" class="about">O mnie</a>
                         <a href="contact.html" class="contact">Kontakt</a>   
+                        <a href="signupForm.html" class="signup">Rejestracja</a> 
                     </div>
                 </div>
             </nav>
